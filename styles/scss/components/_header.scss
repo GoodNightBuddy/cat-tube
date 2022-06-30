@@ -1,0 +1,38 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  padding: 10px 15px 10px 15px;
+}
+.header-logo {
+  font-size: 28px;
+  color: var(--color-orange, #f6af44)
+}
+.fa-solid {
+}
+.fa-cat {
+}
+.header-serach {
+  display: flex;
+}
+.header-search {
+
+		// .header-search__bar
+
+		&__bar {
+		}
+
+		// .header-search__input
+
+		&__input {
+		}
+}
+.fa-magnifying-glass {
+}
+.header-menu {
+}
+.fa-bell {
+}
+.fa-paw {
+}
