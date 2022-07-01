@@ -1,0 +1,4 @@
+.aside {
+  float: left;
+  height: calc(100vh - var(--header-height, 65px));
+}
