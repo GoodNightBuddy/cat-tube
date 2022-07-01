@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,32 +9,46 @@
   <link rel="stylesheet" href="./styles/css/fonts.css">
   <link rel="stylesheet" href="./styles/css/fonts/fontawesome-free-6.1.1-web/css/all.min.css">
   <link rel="stylesheet" href="./styles/css/main.css">
+  <link rel="shortcut icon" href="./assets/icons/shield-cat-solid.svg" type="image/x-icon">
   <title>Document</title>
 </head>
+
 <body>
   <header class="header">
-    <div class="header-logo">
-      <i class="fa-solid fa-cat"></i>
-      <span>Bulka</span>
-      <span>TV</span>
-    </div>
-    <div class="header-search">
-      <div class="header-search__bar">
-        <input type="search" class="header-search__input" placeholder="Search...">
-        <i class="fa-solid fa-magnifying-glass"></i>
+    <div class="header__container">
+      <div class="header-logo">
+        <i class="fa-solid fa-cat icon"></i>
+        <i>Bulka</i>
+        <i>TV</i>
       </div>
-      <i class="fa-solid fa-microphone"></i>
+      <div class="header-search">
+        <div class="header-search__bar">
+          <input type="search" class="header-search__input" placeholder="Search...">
+        </div>
+        <div class="icon header-search--glass"><i class="fa-solid fa-magnifying-glass"></i></div>
+        <div class="icon header-search--micro"><i class="fa-solid fa-microphone"></i></div>
+      </div>
+      <div class="header-menu">
+        <div class="icon header-menu__bell"><i class="fa-solid fa-bell"></i></div>
+        <div class="icon header-menu__paw">
+          <i class="fa-solid fa-paw"></i>
+          <ul class="dropdown">
+            <li><i class="fa-solid fa-paw"></i>Profile</li>
+            <li><i class="fa-solid fa-gear"></i></i>Settings</li>
+            <li><i class="fa-solid fa-right-from-bracket"></i>Logout</li>
+          </ul>
+        </div>
+      </div>
+
     </div>
-    <div class="header-menu">
-      <i class="fa-solid fa-bell"></i>
-      <i class="fa-solid fa-paw"></i>
-    </div>  
+
   </header>
   <main class="main">
     <aside>Aside</aside>
     <section>Section</section>
   </main>
   <footer class="footer">Footer</footer>
-  
+
 </body>
+
 </html>
