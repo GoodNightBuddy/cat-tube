@@ -57,6 +57,14 @@ html {
   position: absolute;
 }
 
+.clearfix:after {
+  content: " ";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  height: 0;
+}
+
 :root {
   --text-color: #000;
   --background-color1: #fff;
@@ -70,6 +78,8 @@ html {
   --font-size1: 32px;
   --font-size2: 20px;
   --header-height: 65px;
+  --aside-width-regular: 230px;
+  --aside-width-light: 80px;
   --transition-duration1: 0.25s;
 }
 
@@ -77,6 +87,7 @@ html {
   position: fixed;
   width: 100%;
   background-color: var(--background-color1, #fff);
+  z-index: 1;
 }
 
 .icon {
@@ -228,15 +239,30 @@ html {
 .aside {
   float: left;
   height: calc(100vh - var(--header-height, 65px));
+  width: var(--aside-width-regular, 230px);
+  background-color: var(--background-color3, #efefef);
+  position: fixed;
+}
+
+.streamers {
+  padding-left: 15px;
+  height: 75%;
+  border-bottom: 1px solid var(--background-color1, #fff);
+}
+.streamers__avatar {
+  width: 30px;
+  height: 30px;
+}
+.about {
+  padding-left: 15px;
+  height: 25%;
 }
 
 .section {
   float: right;
-  max-width: 100%;
+  width: calc(100% - var(--aside-width-regular, 230px));
 }
 
 .main {
   padding-top: var(--header-height, 65px);
-  padding-left: 15px;
-  padding-right: 15px;
 }

@@ -1,4 +1,48 @@
 .aside {
   float: left;
   height: calc(100vh - var(--header-height, 65px));
+  width: var(--aside-width-regular, 230px);
+  background-color: var(--background-color3, #efefef);
+  position: fixed;
+}
+
+
+.streamers {
+  padding-left: 15px;
+  height: 75%;
+  border-bottom: 1px solid var(--background-color1, #fff);
+
+  &__list {
+  }
+
+  // .streamers__streamer
+
+  &__streamer {
+  }
+
+  // .streamers__info
+
+  &__info {
+  }
+
+  // .streamers__avatar
+
+  &__avatar {
+    width: 30px;
+    height: 30px;
+    
+  }
+
+  // .streamers__count
+
+  &__count {
+  }
+}
+
+
+
+
+  .about {
+  padding-left: 15px;
+  height: 25%;
 }

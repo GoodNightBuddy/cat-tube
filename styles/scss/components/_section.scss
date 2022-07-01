@@ -1,4 +1,4 @@
 .section {
   float: right;
-  max-width: 100%;
+  width: calc(100% - var(--aside-width-regular, 230px));
 }
