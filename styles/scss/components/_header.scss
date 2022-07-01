@@ -1,38 +1,180 @@
 .header {
+  position: fixed;
+  width: 100%;
+  background-color: var(  --background-color1, #fff);
+}
+
+
+.icon {
+  // transition: all 0.3s ease-out;
+  transition-property: color, background-color;
+  transition-duration: var(--transition-duration1, 0.25s);
+  transition-timing-function: ease-out;
+  cursor: pointer;
+}
+
+.header__container {
   display: flex;
   justify-content: space-between;
-  align-content: center;
   align-items: center;
   padding: 10px 15px 10px 15px;
+  box-shadow: 0px 4px 5px 1px rgba(158, 158, 158, 0.8);
+  padding: 10px 15px 10px 15px;
+
 }
+
 .header-logo {
-  font-size: 28px;
-  color: var(--color-orange, #f6af44)
+  font-size: 2.5rem;
+  color: var(--highlight-color, #f6af44);
+  float: left;
+  cursor: pointer;
+
+  .icon {
+    font-size: calc(2.5rem - 25%);
+    transform: translateY(-0.25rem);
+  }
+
 }
-.fa-solid {
-}
-.fa-cat {
-}
-.header-serach {
-  display: flex;
-}
+
 .header-search {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 32%;
+  right: 32%;
 
-		// .header-search__bar
+  .header-search__bar {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
 
-		&__bar {
-		}
+    input {
+      height: var(--font-size1, 32px);
+      font-size: 1em;
+      border: var(--border-width2, 2px) solid var(--border-color2, #dcdcdc);
+      border-radius: 3px 0 0 3px;
+      outline: none;
+      width: 100%;
+      z-index: 2;
+      transition-property: box-shadow, border;
+      transition-duration: var(--transition-duration1, 0.25s);
+      transition-timing-function: ease-out;
+    }
 
-		// .header-search__input
+    input:focus {
+      box-shadow: 0px 0px 2px 1px #3f91fd;
+      border-color: #3f91fd;
+    }
 
-		&__input {
-		}
+  }
+
+  .header-search--glass {
+    width: var(--font-size1, 32px);
+    height: var(--font-size1, 32px);
+    background-color: var(--background-color3, #efefef);
+    border: var(--border-width2, 2px) solid var(--border-color2, #dcdcdc);
+    border-radius: 0px 3px 3px 0px;
+    position: relative;
+    border-left: none;
+  }
+
+  .header-search--glass:hover {
+    background-color: var(--border-color2, #dcdcdc);
+  }
+
+  .header-search--glass i {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+  }
+
+  .header-search--micro {
+    color: var(--background-color2, #c1c1c1);
+    font-size: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .header-search--micro:hover {
+    color: var(--border-color1, #7e7e7e);
+  }
+
 }
-.fa-magnifying-glass {
-}
+
+
 .header-menu {
+  font-size: 1.5rem;
+  color: var(--background-color2, #c1c1c1);
+  display: flex;
+  align-items: center;
+  float: right;
+
+  .header-menu__bell:hover {
+    color: var(--border-color1, #7e7e7e);
+  }
+
+  .header-menu__paw {
+    color: var(--text-color, #000);
+    font-size: 1rem;
+    margin-left: 20px;
+    width: 45px;
+    height: 45px;
+    background-color: var(--highlight-color, #f6af44);
+    border-radius: 50%;
+    position: relative;
+  }
+
+  .header-menu__paw > i {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+  }
+
+  .header-menu__paw:hover {
+    background-color: var(--background-color3, #efefef);
+  }
+
+  .header-menu__paw:hover > .dropdown {
+    left: -225%;
+  }
+
 }
-.fa-bell {
-}
-.fa-paw {
+
+
+.dropdown {
+  background-color: var(--background-color1, #fff);
+  list-style: none;
+  border: var(--border-width2, 2px) solid var(--border-color2, #dcdcdc);
+  border-radius: 5px;
+  width: 150px;
+  font-size: 1rem;
+  display: block;
+  position: absolute;
+  top: 110%;
+  left: 140%;
+  transition: all 0.25s ease-out;
+  transition-delay: 0.25s;
+
+  i {
+    padding: 8px 10px 8px 20px;
+  }
+
+  li {
+    width: 100%;
+    transition: background-color var(--transition-duration1, 0.25s) ease-out;
+    cursor: pointer;
+  }
+
+  li:hover {
+    background-color: var(--border-color2, #dcdcdc);
+  }
+
+  li:last-child {
+    border-top: var(--border-width2, 2px) solid var(--border-color2, #dcdcdc);
+    color: red;
+  }
+  
 }

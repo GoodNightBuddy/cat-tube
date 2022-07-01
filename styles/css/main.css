@@ -50,25 +50,182 @@ html {
   font-weight: 500;
 }
 
+.center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+:root {
+  --text-color: #000;
+  --background-color1: #fff;
+  --background-color2: #c1c1c1;
+  --background-color3: #efefef;
+  --border-color1: #7e7e7e;
+  --border-color2: #dcdcdc;
+  --border-width1: 1px;
+  --border-width2: 2px;
+  --highlight-color: #f6af44;
+  --font-size1: 32px;
+  --font-size2: 20px;
+  --transition-duration1: 0.25s;
+}
+
 .header {
+  position: fixed;
+  width: 100%;
+  background-color: var(--background-color1, #fff);
+}
+
+.icon {
+  transition-property: color, background-color;
+  transition-duration: var(--transition-duration1, 0.25s);
+  transition-timing-function: ease-out;
+  cursor: pointer;
+}
+
+.header__container {
   display: flex;
   justify-content: space-between;
-  align-content: center;
   align-items: center;
+  padding: 10px 15px 10px 15px;
+  box-shadow: 0px 4px 5px 1px rgba(158, 158, 158, 0.8);
   padding: 10px 15px 10px 15px;
 }
 
 .header-logo {
-  font-size: 28px;
-  color: var(--color-orange, #f6af44);
+  font-size: 2.5rem;
+  color: var(--highlight-color, #f6af44);
+  float: left;
+  cursor: pointer;
+}
+.header-logo .icon {
+  font-size: calc(2.5rem - 25%);
+  transform: translateY(-0.25rem);
 }
 
-.header-serach {
+.header-search {
   display: flex;
+  align-items: center;
+  position: absolute;
+  left: 32%;
+  right: 32%;
+}
+.header-search .header-search__bar {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+.header-search .header-search__bar input {
+  height: var(--font-size1, 32px);
+  font-size: 1em;
+  border: var(--border-width2, 2px) solid var(--border-color2, #dcdcdc);
+  border-radius: 3px 0 0 3px;
+  outline: none;
+  width: 100%;
+  z-index: 2;
+  transition-property: box-shadow, border;
+  transition-duration: var(--transition-duration1, 0.25s);
+  transition-timing-function: ease-out;
+}
+.header-search .header-search__bar input:focus {
+  box-shadow: 0px 0px 2px 1px #3f91fd;
+  border-color: #3f91fd;
+}
+.header-search .header-search--glass {
+  width: var(--font-size1, 32px);
+  height: var(--font-size1, 32px);
+  background-color: var(--background-color3, #efefef);
+  border: var(--border-width2, 2px) solid var(--border-color2, #dcdcdc);
+  border-radius: 0px 3px 3px 0px;
+  position: relative;
+  border-left: none;
+}
+.header-search .header-search--glass:hover {
+  background-color: var(--border-color2, #dcdcdc);
+}
+.header-search .header-search--glass i {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+.header-search .header-search--micro {
+  color: var(--background-color2, #c1c1c1);
+  font-size: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.header-search .header-search--micro:hover {
+  color: var(--border-color1, #7e7e7e);
 }
 
-:root {
-  --color-black: #000;
-  --color-white: #fff;
-  --color-orange: #f6af44;
+.header-menu {
+  font-size: 1.5rem;
+  color: var(--background-color2, #c1c1c1);
+  display: flex;
+  align-items: center;
+  float: right;
+}
+.header-menu .header-menu__bell:hover {
+  color: var(--border-color1, #7e7e7e);
+}
+.header-menu .header-menu__paw {
+  color: var(--text-color, #000);
+  font-size: 1rem;
+  margin-left: 20px;
+  width: 45px;
+  height: 45px;
+  background-color: var(--highlight-color, #f6af44);
+  border-radius: 50%;
+  position: relative;
+}
+.header-menu .header-menu__paw > i {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+.header-menu .header-menu__paw:hover {
+  background-color: var(--background-color3, #efefef);
+}
+.header-menu .header-menu__paw:hover > .dropdown {
+  left: -225%;
+}
+
+.dropdown {
+  background-color: var(--background-color1, #fff);
+  list-style: none;
+  border: var(--border-width2, 2px) solid var(--border-color2, #dcdcdc);
+  border-radius: 5px;
+  width: 150px;
+  font-size: 1rem;
+  display: block;
+  position: absolute;
+  top: 110%;
+  left: 140%;
+  transition: all 0.25s ease-out;
+  transition-delay: 0.25s;
+}
+.dropdown i {
+  padding: 8px 10px 8px 20px;
+}
+.dropdown li {
+  width: 100%;
+  transition: background-color var(--transition-duration1, 0.25s) ease-out;
+  cursor: pointer;
+}
+.dropdown li:hover {
+  background-color: var(--border-color2, #dcdcdc);
+}
+.dropdown li:last-child {
+  border-top: var(--border-width2, 2px) solid var(--border-color2, #dcdcdc);
+  color: red;
+}
+
+.main {
+  padding-top: 65px;
+  height: 150vh;
 }
