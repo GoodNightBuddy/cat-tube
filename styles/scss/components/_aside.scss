@@ -1,6 +1,6 @@
 .aside {
   float: left;
-  height: calc(100vh - var(--header-height, 65px));
+  height: 100%;
   width: var(--aside-width-regular, 230px);
   background-color: var(--background-color3, #efefef);
   position: fixed;
@@ -8,41 +8,113 @@
 
 
 .streamers {
-  padding-left: 15px;
-  height: 75%;
+  max-height: 75%;
   border-bottom: 1px solid var(--background-color1, #fff);
+  font-size: var(--font-size-normal, 20px);
+  overflow-y: auto;
 
-  &__list {
-  }
+  &__list {}
 
   // .streamers__streamer
 
   &__streamer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 15px 15px 15px;
+    transition: background-color var(--transition-duration1, 0.25s) ease-out;
+  }
+
+  &__streamer:hover {
+    cursor: pointer;
+    background-color: var(--background-color2, #c1c1c1);
   }
 
   // .streamers__info
 
   &__info {
+    display: flex;
+    align-items: center;
   }
 
-  // .streamers__avatar
+  &__name {
+    align-items: center;
+    width: 110px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: background-color var(--transition-duration1, 0.25s) ease-out;
+  }
+  
+  &__name:hover {
+    color: var(--color-blue, #45a5ff); 
+  }
 
   &__avatar {
     width: 30px;
     height: 30px;
-    
+    border-radius: 50%;
+    margin-right: 15px;
   }
-
-  // .streamers__count
 
   &__count {
+    position: relative;
+  }
+
+  .streamers__count.streamers__count--active::before {
+    content: '';
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background-color: red;
+    border-radius: 50%;
+    left: -40%;
+    top: 25%;
+    animation-name: blink;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    animation-direction: alternate-reverse;
+    // animation-fill-mode: backwards;
+  }
+
+  @keyframes blink {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    50% {
+      transform: scale(1.5);
+      opacity: 0.1;
+    }
+  }
+
+}
+
+.about {
+
+  &__inner {
+    margin: 15px;
+    background-color: var(--border-color2, #dcdcdc);
+    border-radius: 3px;
+    // position: ;
+  }
+
+  // .about__text
+
+  &__text {
+  }
+
+  // .about__contacts
+
+  &__contacts {
+  }
+
+  // .about__contact
+
+  &__contact {
   }
 }
 
-
-
-
-  .about {
-  padding-left: 15px;
-  height: 25%;
-}

@@ -1,4 +1,17 @@
 .section {
   float: right;
   width: calc(100% - var(--aside-width-regular, 230px));
+  overflow-y: auto;
+  height: 100%;
+}
+
+section::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+section::-webkit-scrollbar-track {
+  border-radius: 0;
+}
+section::-webkit-scrollbar-thumb{
+  border-radius: 0;
 }
