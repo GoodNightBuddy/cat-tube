@@ -1,6 +1,6 @@
 .aside {
   float: left;
-  height: 100%;
+  height: calc(100% - var(--header-height, 65px));
   width: var(--aside-width-regular, 230px);
   background-color: var(--background-color3, #efefef);
   position: fixed;
@@ -8,14 +8,13 @@
 
 
 .streamers {
-  max-height: 75%;
+  height: calc(100% - 130px);
   border-bottom: 1px solid var(--background-color1, #fff);
   font-size: var(--font-size-normal, 20px);
   overflow-y: auto;
 
   &__list {}
 
-  // .streamers__streamer
 
   &__streamer {
     display: flex;
@@ -30,7 +29,6 @@
     background-color: var(--background-color2, #c1c1c1);
   }
 
-  // .streamers__info
 
   &__info {
     display: flex;
@@ -39,15 +37,15 @@
 
   &__name {
     align-items: center;
-    width: 110px;
+    max-width: 110px;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
     transition: background-color var(--transition-duration1, 0.25s) ease-out;
   }
-  
+
   &__name:hover {
-    color: var(--color-blue, #45a5ff); 
+    color: var(--color-blue, #45a5ff);
   }
 
   &__avatar {
@@ -94,27 +92,44 @@
 }
 
 .about {
+  height: 100px;
 
   &__inner {
-    margin: 15px;
     background-color: var(--border-color2, #dcdcdc);
     border-radius: 3px;
-    // position: ;
+    font-size: var(--font-size2, 20px);
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    margin: 15px;
   }
 
   // .about__text
 
   &__text {
+    margin: 10px;
   }
 
-  // .about__contacts
+  // &__text::selection {
+  //   color: var(--background-color1, #fff);
+  //   background-color: var(--highlight-color, #f6af44);
+  // }
 
   &__contacts {
+    display: flex;
+    justify-content: center;
+
   }
 
   // .about__contact
 
   &__contact {
+    margin: 10px;
+    a {
+      transition: color var(--transition-duration1, 0.25s) ease-out;
+    }
+    a:hover {
+      color: var(--color-blue, #45a5ff);
+    }
   }
 }
-

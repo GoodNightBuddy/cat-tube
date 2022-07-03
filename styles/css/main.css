@@ -45,11 +45,11 @@ input {
   border-radius: 0;
 }
 
-a.text:active,
-a.text:hover,
-a.text {
-  text-decoration: none;
-  color: #666;
+a:active,
+a:hover,
+a:visited,
+a {
+  color: #000;
 }
 
 html {
@@ -70,6 +70,11 @@ html {
   clear: both;
   visibility: hidden;
   height: 0;
+}
+
+.selection::selection {
+  color: var(--background-color1, #fff);
+  background-color: var(--highlight-color, #f6af44);
 }
 
 *::-webkit-scrollbar {
@@ -111,7 +116,7 @@ html {
   --header-height: 65px;
   --aside-width-regular: 250px;
   --aside-width-light: 80px;
-  --transition-duration1: 0.25s;
+  --transition-duration1: 0.3s;
   --font-size-normal: 20px;
   --font-size-large: 32px;
 }
@@ -271,14 +276,14 @@ html {
 
 .aside {
   float: left;
-  height: 100%;
+  height: calc(100% - var(--header-height, 65px));
   width: var(--aside-width-regular, 230px);
   background-color: var(--background-color3, #efefef);
   position: fixed;
 }
 
 .streamers {
-  max-height: 75%;
+  height: calc(100% - 130px);
   border-bottom: 1px solid var(--background-color1, #fff);
   font-size: var(--font-size-normal, 20px);
   overflow-y: auto;
@@ -300,7 +305,7 @@ html {
 }
 .streamers__name {
   align-items: center;
-  width: 110px;
+  max-width: 110px;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
@@ -345,11 +350,35 @@ html {
   }
 }
 
+.about {
+  height: 100px;
+}
 .about__inner {
-  margin: 15px;
   background-color: var(--border-color2, #dcdcdc);
   border-radius: 3px;
+  font-size: var(--font-size2, 20px);
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  margin: 15px;
 }
+.about__text {
+  margin: 10px;
+}
+.about__contacts {
+  display: flex;
+  justify-content: center;
+}
+.about__contact {
+  margin: 10px;
+}
+.about__contact a {
+  transition: color var(--transition-duration1, 0.25s) ease-out;
+}
+.about__contact a:hover {
+  color: var(--color-blue, #45a5ff);
+}
+
 .section {
   float: right;
   width: calc(100% - var(--aside-width-regular, 230px));

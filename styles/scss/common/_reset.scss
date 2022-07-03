@@ -44,9 +44,9 @@ input{
   -webkit-appearance: none;
   border-radius: 0;
 }
-a.text:active,
-a.text:hover,
-a.text {
-  text-decoration: none;
-  color: #666;
+a:active,
+a:hover,
+a:visited,
+a {
+  color: #000;
 }

@@ -19,6 +19,11 @@ html {
   height: 0;
 }
 
+.selection::selection {
+  color: var(--background-color1, #fff);
+  background-color: var(--highlight-color, #f6af44);
+}
+
 *::-webkit-scrollbar {
   width: 6px;
   height: 6px;
