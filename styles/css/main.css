@@ -475,6 +475,7 @@ html {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0);
+  transition: background-color var(--transition-duration1, 0.25s) ease-out;
 }
 .video-container .fade-in i {
   color: var(--background-color1, #fff);
@@ -482,11 +483,16 @@ html {
   position: absolute;
   top: 50%;
   left: 50%;
+  opacity: 0;
+  transition: opacity var(--transition-duration1, 0.25s) ease-out;
   transform: translate(-50%, -50%);
   cursor: pointer;
 }
 .video-container .fade-in:hover {
   background-color: rgba(0, 0, 0, 0.4);
+}
+.video-container .fade-in:hover i {
+  opacity: 1;
 }
 .video-container__info {
   display: grid;
