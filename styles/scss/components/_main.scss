@@ -1,5 +1,7 @@
 .main {
   padding-top: var(--header-height, 65px);
-  // height: calc(100vh - var(--header-height, 65px));
   height: 100vh;
+  display: grid;
+  grid-template-areas: 'aside section';
+  grid-template-columns: var(--aside-width-regular, 250px) 1fr;
 }

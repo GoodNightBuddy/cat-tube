@@ -1,16 +1,35 @@
 .aside {
-  float: left;
   height: calc(100% - var(--header-height, 65px));
-  width: var(--aside-width-regular, 230px);
+  width: var(--aside-width-regular, 250px);
   background-color: var(--background-color3, #efefef);
   position: fixed;
+  grid-area: aside;
 }
 
+
+.streamers::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.streamers::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: rgba(0,0,0,0.1);
+}
+.streamers::-webkit-scrollbar-thumb{
+  border-radius: 10px;
+  background: rgba(0,0,0,0.2);
+}
+.streamers::-webkit-scrollbar-thumb:hover{
+  background: rgba(0,0,0,0.4);
+}
+.streamers::-webkit-scrollbar-thumb:active{
+  background: rgba(0,0,0,.9);
+}
 
 .streamers {
   height: calc(100% - 130px);
   border-bottom: 1px solid var(--background-color1, #fff);
-  font-size: var(--font-size-normal, 20px);
+  font-size: var(--font-size-normal, 18px);
   overflow-y: auto;
 
   &__list {}
@@ -49,17 +68,17 @@
   }
 
   &__avatar {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
-    margin-right: 15px;
+    margin-right: 10px;
   }
 
   &__count {
     position: relative;
   }
 
-  .streamers__count.streamers__count--active::before {
+  .streamers__count.live::before {
     content: '';
     position: absolute;
     width: 7px;
