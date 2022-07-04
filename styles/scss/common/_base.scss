@@ -1,11 +1,25 @@
 html {
   font-family: Grandstander, Sans-serif, Arial;
-  font-weight: 500;
+  font-weight: 400;
 }
+
 
 .center {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   position: absolute;
+}
+
+.clearfix:after {
+  content: " ";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  height: 0;
+}
+
+.selection::selection {
+  color: var(--background-color1, #fff);
+  background-color: var(--highlight-color, #f6af44);
 }

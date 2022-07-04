@@ -1,4 +1,13 @@
 .main {
-  padding-top: 65px;
-  height: 150vh;
+  padding-top: var(--header-height, 65px);
+  height: 100vh;
+  display: grid;
+  grid-template-areas: 'aside section';
+  grid-template-columns: var(--aside-width-regular, 250px) 1fr;
+}
+
+@media (max-width: 1200px) {
+  .main {
+    grid-template-columns: var(--aside-width-slim, 70px) 1fr;
+  }
 }

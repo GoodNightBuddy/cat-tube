@@ -1,5 +1,6 @@
 :root {
   --text-color: #000;
+  --color-blue: #45a5ff;
   --background-color1: #fff;
   --background-color2: #c1c1c1;
   --background-color3: #efefef;
@@ -10,5 +11,11 @@
   --highlight-color: #f6af44;
   --font-size1: 32px;
   --font-size2: 20px;
-  --transition-duration1: 0.25s;
+  --header-height: 65px;
+  --aside-width-regular: 250px;
+  --aside-width-slim: 70px;
+  --aside-width-light: 80px;
+  --transition-duration1: 0.3s;
+  --font-size-normal: 18px;
+  --font-size-large: 32px;
 }
