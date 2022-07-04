@@ -92,6 +92,7 @@ html {
   --font-size2: 20px;
   --header-height: 65px;
   --aside-width-regular: 250px;
+  --aside-width-slim: 70px;
   --aside-width-light: 80px;
   --transition-duration1: 0.3s;
   --font-size-normal: 18px;
@@ -361,6 +362,7 @@ html {
   text-align: center;
   flex-direction: column;
   margin: 15px;
+  height: 100%;
 }
 .about__text {
   margin: 10px;
@@ -368,6 +370,7 @@ html {
 .about__contacts {
   display: flex;
   justify-content: center;
+  height: 100%;
 }
 .about__contact {
   margin: 10px;
@@ -379,6 +382,29 @@ html {
   color: var(--color-blue, #45a5ff);
 }
 
+@media (max-width: 1200px) {
+  .streamers__name,
+.streamers__count {
+    display: none;
+  }
+
+  .aside {
+    width: var(--aside-width-slim, 70px);
+  }
+
+  .about__text {
+    display: none;
+  }
+  .about__contacts {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .about__contact {
+    margin: 0px;
+  }
+}
 .section {
   overflow-y: scroll;
   height: 100%;
@@ -412,7 +438,7 @@ html {
 .categories {
   overflow-x: scroll;
   display: grid;
-  grid-template-columns: repeat(10, auto);
+  grid-template-columns: repeat(15, auto);
   gap: 0px 15px;
 }
 .categories__category {
@@ -452,7 +478,7 @@ html {
 .video-block {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 25px 10px;
+  gap: 0px 10px;
 }
 
 .video-container {
@@ -467,6 +493,17 @@ html {
 .video-container__image img {
   width: 100%;
   height: 225px;
+}
+.video-container__image::after {
+  position: absolute;
+  content: "14:88";
+  color: var(--background-color1, #fff);
+  background: rgba(0, 0, 0, 0.5);
+  right: 5px;
+  bottom: 5px;
+  padding: 4px 5px 2px 5px;
+  border-radius: 3px;
+  font-size: medium;
 }
 .video-container .fade-in {
   position: absolute;
@@ -542,10 +579,42 @@ html {
   color: var(--color-blue, #45a5ff);
 }
 
+.video-container.live .video-container__image::after {
+  content: "228K viewers";
+}
+.video-container.live .video-container__image::before {
+  position: absolute;
+  content: "Live";
+  font-size: small;
+  color: var(--background-color1, #fff);
+  background: red;
+  top: 5px;
+  left: 5px;
+  padding: 5px 6px 3px 6px;
+  border-radius: 3px;
+}
+
+.footer {
+  text-align: center;
+  font-size: var(--font-size-normal, 32px);
+}
+.footer i {
+  transition: color var(--transition-duration1, 0.25s) ease-out;
+}
+.footer i:hover {
+  color: var(--color-blue, #45a5ff);
+}
+
 .main {
   padding-top: var(--header-height, 65px);
   height: 100vh;
   display: grid;
   grid-template-areas: "aside section";
   grid-template-columns: var(--aside-width-regular, 250px) 1fr;
+}
+
+@media (max-width: 1200px) {
+  .main {
+    grid-template-columns: var(--aside-width-slim, 70px) 1fr;
+  }
 }
