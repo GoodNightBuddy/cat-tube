@@ -178,3 +178,34 @@
   }
   
 }
+
+@media (max-width: 768px) {
+  .header-logo {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+  
+    .icon {
+      font-size: calc(1.5rem - 25%);
+      transform: translateY(-0.14rem);
+    }
+  
+  }
+}
+
+@media (max-width: 480px) {
+  .header-logo {
+    font-size: 1.5rem;
+    margin-top: 0;
+
+    .icon {
+      font-size: calc(2.5rem - 25%);
+      transform: translateY(1px);
+    }
+
+    i:not(:first-child) {
+      display: none;
+    }
+    
+  }
+
+}

@@ -2,7 +2,30 @@
   overflow-y: scroll;
   height: 100%;
   grid-area: section;
-  padding: 0 0 0 15px;
+  padding: 0 0 0 var(--main-side-padding, 15px);
+  display: grid;
+  grid-template-areas:
+    "categories"
+    "carousel"
+    "video-block"
+    "footer";
+  grid-template-rows: min-content auto auto min-content;
+}
+
+.categories {
+  grid-area: categories;
+}
+
+.carousel {
+  grid-area: carousel;
+}
+
+.video-block {
+  grid-area: video-block;
+}
+
+.footer {
+  grid-area: footer;
 }
 
 .section::-webkit-scrollbar {
@@ -223,7 +246,7 @@
 }
 
 .footer {
-  margin: 15px 0 10px 0;
+  margin: 25px 0 10px 0;
   text-align: center;
   font-size: var(--font-size-normal, 32px);
 

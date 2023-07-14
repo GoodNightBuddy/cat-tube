@@ -97,6 +97,7 @@ html {
   --transition-duration1: 0.3s;
   --font-size-normal: 18px;
   --font-size-large: 32px;
+  --main-side-padding: 15px;
 }
 
 .header {
@@ -252,6 +253,29 @@ html {
   color: red;
 }
 
+@media (max-width: 768px) {
+  .header-logo {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+  }
+  .header-logo .icon {
+    font-size: calc(1.5rem - 25%);
+    transform: translateY(-0.14rem);
+  }
+}
+@media (max-width: 480px) {
+  .header-logo {
+    font-size: 1.5rem;
+    margin-top: 0;
+  }
+  .header-logo .icon {
+    font-size: calc(2.5rem - 25%);
+    transform: translateY(1px);
+  }
+  .header-logo i:not(:first-child) {
+    display: none;
+  }
+}
 .aside {
   height: calc(100% - var(--header-height, 65px));
   width: var(--aside-width-regular, 250px);
@@ -384,7 +408,7 @@ html {
 
 @media (max-width: 1200px) {
   .streamers__name,
-.streamers__count {
+  .streamers__count {
     display: none;
   }
   .aside {
@@ -407,7 +431,26 @@ html {
   overflow-y: scroll;
   height: 100%;
   grid-area: section;
-  padding: 0 0 0 15px;
+  padding: 0 0 0 var(--main-side-padding, 15px);
+  display: grid;
+  grid-template-areas: "categories" "carousel" "video-block" "footer";
+  grid-template-rows: min-content auto auto min-content;
+}
+
+.categories {
+  grid-area: categories;
+}
+
+.carousel {
+  grid-area: carousel;
+}
+
+.video-block {
+  grid-area: video-block;
+}
+
+.footer {
+  grid-area: footer;
 }
 
 .section::-webkit-scrollbar {
@@ -593,7 +636,7 @@ html {
 }
 
 .footer {
-  margin: 15px 0 10px 0;
+  margin: 25px 0 10px 0;
   text-align: center;
   font-size: var(--font-size-normal, 32px);
 }
