@@ -464,16 +464,17 @@ html {
 }
 
 .section::-webkit-scrollbar-thumb {
+  transition: background-color 0.3s ease;
   border-radius: 2px;
-  background: #fff;
+  background-color: #fff;
 }
 
 .section::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .section::-webkit-scrollbar-thumb:active {
-  background: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .categories {
@@ -636,7 +637,7 @@ html {
 }
 
 .footer {
-  margin: 25px 0 10px 0;
+  margin: 25px 0 15px 0;
   text-align: center;
   font-size: var(--font-size-normal, 32px);
 }
@@ -730,22 +731,22 @@ img {
   object-fit: cover;
 }
 
-#item-1:checked ~ .cards #song-3, #item-2:checked ~ .cards #song-1, #item-3:checked ~ .cards #song-2 {
+#item-1:checked ~ .cards #video-3, #item-2:checked ~ .cards #video-1, #item-3:checked ~ .cards #video-2 {
   transform: translatex(-29%) scale(0.8);
-  z-index: 0;
+  z-index: 1;
 }
 
-#item-1:checked ~ .cards #song-2, #item-2:checked ~ .cards #song-3, #item-3:checked ~ .cards #song-1 {
+#item-1:checked ~ .cards #video-2, #item-2:checked ~ .cards #video-3, #item-3:checked ~ .cards #video-1 {
   transform: translatex(29%) scale(0.8);
   z-index: 0;
 }
 
-#item-1:checked ~ .cards #song-1, #item-2:checked ~ .cards #song-2, #item-3:checked ~ .cards #song-3 {
+#item-1:checked ~ .cards #video-1, #item-2:checked ~ .cards #video-2, #item-3:checked ~ .cards #video-3 {
   transform: translatex(0) scale(1);
   opacity: 1;
-  z-index: 1;
+  z-index: 2;
 }
 
-#item-1:checked ~ .cards #song-1 .card-inner, #item-2:checked ~ .cards #song-2 .card-inner, #item-3:checked ~ .cards #song-3 .card-inner {
+#item-1:checked ~ .cards #video-1 .card-inner, #item-2:checked ~ .cards #video-2 .card-inner, #item-3:checked ~ .cards #video-3 .card-inner {
   box-shadow: 0px 6px 8px 6px rgba(34, 60, 80, 0.4);
 }
